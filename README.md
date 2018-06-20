@@ -58,12 +58,12 @@ ViewController里有一个这样的调用，参数为nil时会导致崩溃。
 ```
 我们从服务器下发这段脚本来修复这个闪退（替换`join:b:`这个方法）:
 ```
-"fixInstanceMethodReplace('ViewController', 'join:b:', function(instance, originInvocation, originArguments){ \
-    if (!originArguments[0] || !originArguments[1]) { \
-        console.log('nil goes here'); \
-    } else { \
-        runInvocation(originInvocation); \
-    } \
+"fixInstanceMethodReplace('ViewController', 'join:b:', function(instance, originInvocation, originArguments){ 
+    if (!originArguments[0] || !originArguments[1]) { 
+        console.log('nil goes here'); 
+    } else { 
+        runInvocation(originInvocation); 
+    } 
 });"
 ```
 App重新启动的时候，会以同步的方式加载到该脚本，并执行修复：
