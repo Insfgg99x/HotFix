@@ -70,7 +70,7 @@ App重新启动的时候，会以同步的方式加载到该脚本，并执行�
 ```
 [[HotFix shared] fix:js];
 ```
-这样原来的`jion:b:`方法就会被替换，当参数为nil时，就会打印`nil gose here`，若部位nil则正常执行。这样崩溃就解决了~
+这样原来的`jion:b:`方法就会被替换，当参数为nil时，就会打印`nil gose here`，若不为nil则正常执行。这样崩溃就解决了~
 
 ## 安装 Installation
 
