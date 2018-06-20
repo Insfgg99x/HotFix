@@ -56,7 +56,7 @@ ViewController里有一个这样的调用，参数为nil时会导致崩溃。
 
 @end
 ```
-我们从服务器下发这段脚本来修复这个闪退（替换join:b:这个方法）:
+我们从服务器下发这段脚本来修复这个闪退（替换`join:b:`这个方法）:
 ```
 "fixInstanceMethodReplace('ViewController', 'join:b:', function(instance, originInvocation, originArguments){ \
     if (!originArguments[0] || !originArguments[1]) { \
@@ -70,7 +70,7 @@ App重新启动的时候，会以同步的方式加载到该脚本，并执行�
 ```
 [[HotFix shared] fix:js];
 ```
-这样原来的jion:b:方法就会被替换，当参数为nil时，就会打印`nil gose here`，若部位nil则正常执行。这样崩溃就解决了~
+这样原来的`jion:b:`方法就会被替换，当参数为nil时，就会打印`nil gose here`，若部位nil则正常执行。这样崩溃就解决了~
 
 ## 安装 Installation
 
